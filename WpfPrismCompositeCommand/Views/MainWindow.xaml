@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfPrismCompositeCommand.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfPrismCompositeCommand"
+        xmlns:command="clr-namespace:WpfPrismCompositeCommand.Commands"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" Grid.ColumnSpan="2">
+            <Button Command="{Binding BasicCompositeCommand}">BasicComposite</Button>
+            <Button Command="{Binding DICompositeCommands.DICompositeCommand}">DIComposite</Button>
+            <Button Command="{x:Static command:StaticCompositeCommands.StaticCompositeCommnd}">StaticComposite</Button>
+            <Button Command="{Binding DisabledCompositeCommand}">DisabledCompsite</Button>
+            <Button Command="{Binding ActiveExecuteCommands.ActiveExecuteCommand}">ActiveExecute</Button>
+            <CheckBox IsChecked="{Binding IsActive}">active</CheckBox>
+        </DockPanel>
+    </Grid>
+</Window>
